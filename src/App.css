@@ -1,9 +1,13 @@
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
 
 :root{
   --primary-color:#09B2EC;
   --secondary-color:#A154A1;
   --colors-white:#FAFAFA;
   --colors-black:#080808;
+  --colors-divider:#404040;
+  --colors-text:#D4D4D4;
 }
 *,*::before,*::after{
   margin: 0;
@@ -20,6 +24,16 @@ body{
   font-family: "Orbitron";
   font-weight: 600;
   font-size: 14px;
+  overflow-x: hidden;
+  line-height: 24px;
+}
+h1{
+  line-height: 64px;
+}
+p{
+  font-family: 'Excon';
+  font-weight: 400;
+  color: var(--colors-text);
 }
 .flex{
   margin:2rem 2rem;
@@ -87,4 +101,192 @@ main video{
 .overlay-text{
     font-family: sans-serif;
     margin-bottom: 2.5rem;
+}
+section{
+  width: 100vw;
+  margin-top: 5rem;
+}
+
+.custom-gallery {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12-column responsive grid */
+  grid-template-rows: repeat(6, 1fr);    /* 6-row responsive grid */
+  height: 100vh; /* Full screen height */
+  width: 100vw;  /* Full screen width */
+  gap: 10px; /* Gap between the grid items */
+  background-color: var(--colors-black);
+  position: relative;
+  padding-bottom: 5rem;
+
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-out; /* Smooth transition for transform */
+  border-radius: 8px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the images fill their containers */
+}
+
+/* Grid positioning for each image */
+.gallery-item-1 {
+  grid-column: 1 / 4; /* Span 3 columns */
+  grid-row: 2 / 4;    /* Span 2 rows */
+}
+
+.gallery-item-2 {
+  grid-column: 4 / 10; /* Span 6 columns */
+  grid-row: 1/6;     /* Span 4 rows */
+}
+
+.gallery-item-3 {
+  grid-column: 10 / 13; /* Span 3 columns */
+  grid-row: 2 / 4;      /* Span 2 rows */
+}
+
+.gallery-item-4 {
+  grid-column: 2 / 6; /* Span 4 columns */
+  grid-row: 5 / 7;    /* Span 2 rows */
+}
+
+.gallery-item-5 {
+  grid-column: 9 / 13; /* Span 4 columns */
+  grid-row: 5 / 7;     /* Span 2 rows */
+}
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./images/elipse.png'); /* Replace with your image */
+  background-size: cover;
+  transition: filter 0.3s;
+}
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding-top: 20%;
+}
+
+.grid {
+  position: absolute;
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Make border visible */
+  pointer-events: none;
+  width: 100px;  /* Adjust the size as needed */
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+  border-radius: 5px; /* Rounded corners for a softer look */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Optional shadow for depth */
+}
+.grid-image {
+  width: 100%; /* Make image fill the grid */
+  height: 100%; /* Make image fill the grid */
+  object-fit: cover; /* Ensure the image covers the area */
+  border-radius: 5px; /* Match border radius of the grid */
+}
+section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section-title  h2{
+    color: var(--colors-divider);
+    font-weight: 600;
+    font-size: 40px;
+}
+.section-title  h1{
+  font-weight: 600;
+  font-size: 64px;
+  margin: 1.5rem 0;
+}
+.section-title p{
+  width: 20rem;
+  text-align: center;
+}
+hr {
+  border: none;
+  border-top: 2px dashed var(--colors-divider);
+  height: 1px;
+  width: 80%;
+  margin: 4rem 6rem 3rem 6rem;
+}
+.service-details{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  gap: 6rem;
+}
+.service-details img{
+  height: 50vh;
+  width: 20vw;
+  object-fit: cover;
+}
+.service-details h1{
+  font-size: 32px;
+  line-height: 32px;
+  margin-bottom: 2rem;
+}
+.service-details h2{
+  font-size: 20px;
+}
+.events-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.event-cards {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.carousel-settings{
+  padding: 2rem 0 2rem 6rem;
+}
+
+.event-card {
+  border: 1px dashed var(--colors-divider);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  width: 316px;
+}
+
+.event-card:hover {
+  transform: scale(1.05);
+}
+
+.event-image {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.event-details {
+  margin-top: 1rem;
+}
+
+.event-details h3 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.event-details p {
+  margin: 5px 0;
+  color: #555;
+}
+.slick-slide{
+  height: 100%;
 }
