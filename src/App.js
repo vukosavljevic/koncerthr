@@ -5,6 +5,9 @@ import Navigation from './components/Navigation';
 import React, { useEffect } from 'react';
 import Services from './components/Services';
 import Events from './components/Carousel';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import TextParallaxContentExample from './components/Example';
 
 function App() {
   /*useEffect(() => {
@@ -42,6 +45,8 @@ function App() {
       <Gallery />
       <Services />
       <Events />
+      <Contact />
+      <Footer />
     </div>
   );
 }

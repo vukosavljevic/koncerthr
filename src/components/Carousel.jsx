@@ -1,83 +1,85 @@
-import React, { useState } from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
-const EventCard = ({ title, date, location, image }) => {
-  return (
-    <div className="event-card">
-      <img src={image} alt={title} className="event-image" />
-      <div className="event-details">
-        <h3>{title}</h3>
-        <p>{date}</p>
-        <p>{location}</p>
-      </div>
-    </div>
-  );
-};
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css'; // Import Swiper styles
 
 const Events = () => {
-  const events = [
+  const slides = [
     {
-      title: 'Plavi orkestar',
-      date: '21.12.2024, 21:00',
+      title: 'Plavi Orkestar',
+      date: '21.12.2024',
+      time: '21:00',
       location: 'Osijek, Gradski vrt',
-      image: 'https://s3-alpha-sig.figma.com/img/de87/103b/d641d4eddbe1a1882cfc670342b313ab?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Svk8FGySgP~p6VHbPZNrCeUm5xI3zm2P5oXcrP6f0x6ufo7IZtmsgrDtLnDQZohi01yCX--vxpT6jpPLooEDffOTHKiKKw6J1QYeUSXBUl0g9uFKpDDmJ-MJasods0Ir47XUudfDczyAbo1zaQDPO38MGdQhmkI6eFFdJ6TkA4eEPRUkxDjiFezKueVGeo~ztxi8snCnNMnGnZVm2t93-z3UBD88a~BVth6KIRwcVbr5fkIpcgdN1QKHrPRDUwQkHEkc1cSyxMSjlrDk26MZ8IGLNBnsWJgV8awlfgnfQVAhZumIRhQ2lAb3c1036xEAX~iRT1HgAXNyUtkvywKFXg__',
+      image: 'https://s3-alpha-sig.figma.com/img/9ddb/e50c/27ac5252f9bca7797a204bfab233b804?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=hxf5CVQXqZbCf2gapFkTVtTXe743GmTtJv~L4KNjUAjLi3VK85j0LarWQogwsbJV5Hzp5e04Ced0GfqjCeaI1EY4y7QU6OJEohz8hpeM9rTRB9XJC8MIvT8kEQn1s6lMoxJAnODsD8ETSCvSe9iGyLUeIp8OrArfGpcXCXZlVx1Jjt6-soF8jv08Or8a3dgvgc9NIlHyR9kgLMvTjSzA9LsUkvkvmeG8yluQ0DsOcQ8VYE-pNf4Ong8CKLZo8S9F8P-KFqMli3JkLmvVEXyJzXj-hL4CEihn7EjjfzPjzbRumJEYU4g9StjI9w8PSs83W2V63c5wNj7EqpVny~Edag__',
     },
     {
       title: 'Nina Badrić',
-      date: '13.02.2025., 20:00',
+      date: '13.02.2025',
+      time: '20:00',
       location: 'Dvorana Zamet, Rijeka',
-      image: 'https://s3-alpha-sig.figma.com/img/de87/103b/d641d4eddbe1a1882cfc670342b313ab?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Svk8FGySgP~p6VHbPZNrCeUm5xI3zm2P5oXcrP6f0x6ufo7IZtmsgrDtLnDQZohi01yCX--vxpT6jpPLooEDffOTHKiKKw6J1QYeUSXBUl0g9uFKpDDmJ-MJasods0Ir47XUudfDczyAbo1zaQDPO38MGdQhmkI6eFFdJ6TkA4eEPRUkxDjiFezKueVGeo~ztxi8snCnNMnGnZVm2t93-z3UBD88a~BVth6KIRwcVbr5fkIpcgdN1QKHrPRDUwQkHEkc1cSyxMSjlrDk26MZ8IGLNBnsWJgV8awlfgnfQVAhZumIRhQ2lAb3c1036xEAX~iRT1HgAXNyUtkvywKFXg__',
+      image: 'https://s3-alpha-sig.figma.com/img/9ddb/e50c/27ac5252f9bca7797a204bfab233b804?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=hxf5CVQXqZbCf2gapFkTVtTXe743GmTtJv~L4KNjUAjLi3VK85j0LarWQogwsbJV5Hzp5e04Ced0GfqjCeaI1EY4y7QU6OJEohz8hpeM9rTRB9XJC8MIvT8kEQn1s6lMoxJAnODsD8ETSCvSe9iGyLUeIp8OrArfGpcXCXZlVx1Jjt6-soF8jv08Or8a3dgvgc9NIlHyR9kgLMvTjSzA9LsUkvkvmeG8yluQ0DsOcQ8VYE-pNf4Ong8CKLZo8S9F8P-KFqMli3JkLmvVEXyJzXj-hL4CEihn7EjjfzPjzbRumJEYU4g9StjI9w8PSs83W2V63c5wNj7EqpVny~Edag__',
     },
     {
       title: 'Doček Nove Godine Tanja Savić',
-      date: '31.12.2024, 22:00',
+      date: '31.12.2024',
+      time: '22:00',
       location: 'Gastro Globus, Zagreb',
-      image: 'https://s3-alpha-sig.figma.com/img/de87/103b/d641d4eddbe1a1882cfc670342b313ab?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Svk8FGySgP~p6VHbPZNrCeUm5xI3zm2P5oXcrP6f0x6ufo7IZtmsgrDtLnDQZohi01yCX--vxpT6jpPLooEDffOTHKiKKw6J1QYeUSXBUl0g9uFKpDDmJ-MJasods0Ir47XUudfDczyAbo1zaQDPO38MGdQhmkI6eFFdJ6TkA4eEPRUkxDjiFezKueVGeo~ztxi8snCnNMnGnZVm2t93-z3UBD88a~BVth6KIRwcVbr5fkIpcgdN1QKHrPRDUwQkHEkc1cSyxMSjlrDk26MZ8IGLNBnsWJgV8awlfgnfQVAhZumIRhQ2lAb3c1036xEAX~iRT1HgAXNyUtkvywKFXg__',
+      image: 'https://s3-alpha-sig.figma.com/img/9ddb/e50c/27ac5252f9bca7797a204bfab233b804?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=hxf5CVQXqZbCf2gapFkTVtTXe743GmTtJv~L4KNjUAjLi3VK85j0LarWQogwsbJV5Hzp5e04Ced0GfqjCeaI1EY4y7QU6OJEohz8hpeM9rTRB9XJC8MIvT8kEQn1s6lMoxJAnODsD8ETSCvSe9iGyLUeIp8OrArfGpcXCXZlVx1Jjt6-soF8jv08Or8a3dgvgc9NIlHyR9kgLMvTjSzA9LsUkvkvmeG8yluQ0DsOcQ8VYE-pNf4Ong8CKLZo8S9F8P-KFqMli3JkLmvVEXyJzXj-hL4CEihn7EjjfzPjzbRumJEYU4g9StjI9w8PSs83W2V63c5wNj7EqpVny~Edag__',
     },
     {
-      title: 'Valentinovo uz Crvenu Jabuku',
-      date: '14.02.2025., 20:00',
+      title: 'Valentinovo uz Crvenu',
+      date: '14.02.2025',
+      time: '20:00',
       location: 'Dvorana Gradski Vrt, Osijek',
-      image: 'https://s3-alpha-sig.figma.com/img/de87/103b/d641d4eddbe1a1882cfc670342b313ab?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Svk8FGySgP~p6VHbPZNrCeUm5xI3zm2P5oXcrP6f0x6ufo7IZtmsgrDtLnDQZohi01yCX--vxpT6jpPLooEDffOTHKiKKw6J1QYeUSXBUl0g9uFKpDDmJ-MJasods0Ir47XUudfDczyAbo1zaQDPO38MGdQhmkI6eFFdJ6TkA4eEPRUkxDjiFezKueVGeo~ztxi8snCnNMnGnZVm2t93-z3UBD88a~BVth6KIRwcVbr5fkIpcgdN1QKHrPRDUwQkHEkc1cSyxMSjlrDk26MZ8IGLNBnsWJgV8awlfgnfQVAhZumIRhQ2lAb3c1036xEAX~iRT1HgAXNyUtkvywKFXg__',
+      image: 'https://s3-alpha-sig.figma.com/img/9ddb/e50c/27ac5252f9bca7797a204bfab233b804?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=hxf5CVQXqZbCf2gapFkTVtTXe743GmTtJv~L4KNjUAjLi3VK85j0LarWQogwsbJV5Hzp5e04Ced0GfqjCeaI1EY4y7QU6OJEohz8hpeM9rTRB9XJC8MIvT8kEQn1s6lMoxJAnODsD8ETSCvSe9iGyLUeIp8OrArfGpcXCXZlVx1Jjt6-soF8jv08Or8a3dgvgc9NIlHyR9kgLMvTjSzA9LsUkvkvmeG8yluQ0DsOcQ8VYE-pNf4Ong8CKLZo8S9F8P-KFqMli3JkLmvVEXyJzXj-hL4CEihn7EjjfzPjzbRumJEYU4g9StjI9w8PSs83W2V63c5wNj7EqpVny~Edag__',
     },
     {
-      title: 'Valentinovo uz Crvenu Jabuku',
-      date: '14.02.2025 ., 20:00',
+      title: 'Valentinovo uz Crvenu',
+      date: '14.02.2025',
+      time: '20:00',
       location: 'Dvorana Gradski Vrt, Osijek',
-      image: 'https://s3-alpha-sig.figma.com/img/de87/103b/d641d4eddbe1a1882cfc670342b313ab?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Svk8FGySgP~p6VHbPZNrCeUm5xI3zm2P5oXcrP6f0x6ufo7IZtmsgrDtLnDQZohi01yCX--vxpT6jpPLooEDffOTHKiKKw6J1QYeUSXBUl0g9uFKpDDmJ-MJasods0Ir47XUudfDczyAbo1zaQDPO38MGdQhmkI6eFFdJ6TkA4eEPRUkxDjiFezKueVGeo~ztxi8snCnNMnGnZVm2t93-z3UBD88a~BVth6KIRwcVbr5fkIpcgdN1QKHrPRDUwQkHEkc1cSyxMSjlrDk26MZ8IGLNBnsWJgV8awlfgnfQVAhZumIRhQ2lAb3c1036xEAX~iRT1HgAXNyUtkvywKFXg__',
+      image: 'https://s3-alpha-sig.figma.com/img/9ddb/e50c/27ac5252f9bca7797a204bfab233b804?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=hxf5CVQXqZbCf2gapFkTVtTXe743GmTtJv~L4KNjUAjLi3VK85j0LarWQogwsbJV5Hzp5e04Ced0GfqjCeaI1EY4y7QU6OJEohz8hpeM9rTRB9XJC8MIvT8kEQn1s6lMoxJAnODsD8ETSCvSe9iGyLUeIp8OrArfGpcXCXZlVx1Jjt6-soF8jv08Or8a3dgvgc9NIlHyR9kgLMvTjSzA9LsUkvkvmeG8yluQ0DsOcQ8VYE-pNf4Ong8CKLZo8S9F8P-KFqMli3JkLmvVEXyJzXj-hL4CEihn7EjjfzPjzbRumJEYU4g9StjI9w8PSs83W2V63c5wNj7EqpVny~Edag__',
     },
     {
-      title: 'Valentinovo uz Crvenu Jabuku',
-      date: '14.02.2025., 20:00',
+      title: 'Valentinovo uz Crvenu',
+      date: '14.02.2025',
+      time: '20:00',
       location: 'Dvorana Gradski Vrt, Osijek',
-      image: 'https://s3-alpha-sig.figma.com/img/de87/103b/d641d4eddbe1a1882cfc670342b313ab?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Svk8FGySgP~p6VHbPZNrCeUm5xI3zm2P5oXcrP6f0x6ufo7IZtmsgrDtLnDQZohi01yCX--vxpT6jpPLooEDffOTHKiKKw6J1QYeUSXBUl0g9uFKpDDmJ-MJasods0Ir47XUudfDczyAbo1zaQDPO38MGdQhmkI6eFFdJ6TkA4eEPRUkxDjiFezKueVGeo~ztxi8snCnNMnGnZVm2t93-z3UBD88a~BVth6KIRwcVbr5fkIpcgdN1QKHrPRDUwQkHEkc1cSyxMSjlrDk26MZ8IGLNBnsWJgV8awlfgnfQVAhZumIRhQ2lAb3c1036xEAX~iRT1HgAXNyUtkvywKFXg__',
+      image: 'https://s3-alpha-sig.figma.com/img/9ddb/e50c/27ac5252f9bca7797a204bfab233b804?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=hxf5CVQXqZbCf2gapFkTVtTXe743GmTtJv~L4KNjUAjLi3VK85j0LarWQogwsbJV5Hzp5e04Ced0GfqjCeaI1EY4y7QU6OJEohz8hpeM9rTRB9XJC8MIvT8kEQn1s6lMoxJAnODsD8ETSCvSe9iGyLUeIp8OrArfGpcXCXZlVx1Jjt6-soF8jv08Or8a3dgvgc9NIlHyR9kgLMvTjSzA9LsUkvkvmeG8yluQ0DsOcQ8VYE-pNf4Ong8CKLZo8S9F8P-KFqMli3JkLmvVEXyJzXj-hL4CEihn7EjjfzPjzbRumJEYU4g9StjI9w8PSs83W2V63c5wNj7EqpVny~Edag__',
     },
   ];
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: false,
-    autoplaySpeed: 3000,
-  };
-
   return (
     <div className="events-container">
-           <div className="section-title">
-                <h2>0/2</h2>
-                <h1>Nadolazeći eventi</h1>
-                <p>Rezervirajte svoje mjesto danas</p>
+      <div className="section-title event-title">
+        <h2>0/2</h2>
+        <h1>Nadolazeći eventi</h1>
+        <p>Rezervirajte svoje mjesto danas</p>
+      </div>
+      <Swiper
+  spaceBetween={15} // Adjust spacing between slides
+  slidesPerView={4} // Default number of visible slides
+  loop={true}
+  scrollbar={{ draggable: true }}
+  breakpoints={{
+    320: { slidesPerView: 2, spaceBetween: 100 }, // Small screens
+
+    480: { slidesPerView: 2, spaceBetween: 100 }, // Small screens
+    768: { slidesPerView: 2, spaceBetween: 15 }, // Tablets
+    1024: { slidesPerView: 3, spaceBetween: 20 }, // Larger tablets or small desktops
+    1280: { slidesPerView: 4, spaceBetween: 20 }, // Full desktop
+  }}
+>
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <div className="event-card">
+              <img src={slide.image} alt={slide.title} className="event-image" />
+              <h2>{slide.title}</h2>
+              <p>{slide.date} | {slide.time}</p>
+              <p>{slide.location}</p>
             </div>
-      <Slider {...settings} className="carousel-settings">
-        {events.map((event) => (
-          <EventCard key={event.title} title={event.title} date={event.date} location={event.location} image={event.image} />
+          </SwiperSlide>
         ))}
-      </Slider>
+      </Swiper>
     </div>
   );
 };
