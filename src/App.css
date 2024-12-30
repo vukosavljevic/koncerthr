@@ -31,7 +31,8 @@
 }
 html{
   scroll-behavior: smooth;
-
+  overflow-x: hidden;
+  max-width: 100%;
 }
 body{
   scroll-behavior: smooth;
@@ -39,6 +40,7 @@ body{
   color: var(--colors-white);
   font-family: "Orbitron";
   font-weight: 600;
+  max-width: 100%;
   font-size: 14px;
   overflow-x: hidden;
   line-height: 24px;
@@ -66,11 +68,14 @@ p{
   width: 80%;
   border-radius: 32px;
 }
+video::-webkit-media-controls {
+  display:none !important;
+}
 header{
   width: 100%;
   display: flex;
   justify-content: center;
-  position: sticky;
+  position: absolute;
   top: 0;
   z-index: 1000;
 }
@@ -479,6 +484,7 @@ font-weight: 400;
 video{
   width: 100vw;
   height: 100vh;
+  object-fit: cover;
 }
 .footer-icon img{
   color: var(--primary-color);
