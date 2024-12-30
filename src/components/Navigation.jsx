@@ -35,7 +35,7 @@ function Navigation() {
           <ul>
               <li><a href="#main" className={activeSection === 'main' ? 'active' : ''}>POČETNA</a></li>
               <li><a href="#services" className={activeSection === 'services' ? 'active' : ''}>USLUGE</a></li>
-              <li><a href="#events" className={activeSection === 'events' ? 'active' : ''}>ULAZNICE</a></li>
+              <li><a href="https://koncert.hr/" className={activeSection === 'events' ? 'active' : ''}>ULAZNICE</a></li>
           </ul>
           <a href="#contact" className='button-primary'>KONTAKT</a>
           <div className='hamburger-menu'>

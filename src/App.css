@@ -52,6 +52,7 @@ p{
   color: var(--colors-text);
 }
 .flex{
+  position: sticky;
   margin:2rem 2rem;
   padding:0.8rem 1.5rem;
   display: flex;
@@ -133,11 +134,11 @@ main video{
 
 .custom-gallery {
   display: grid;
-  grid-template-columns: repeat(12, 1fr); /* 12-column responsive grid */
-  grid-template-rows: repeat(6, 1fr);    /* 6-row responsive grid */
-  height: 100vh; /* Full screen height */
-  width: 100vw;  /* Full screen width */
-  gap: 10px; /* Gap between the grid items */
+  grid-template-columns: repeat(12, 1fr); 
+  grid-template-rows: repeat(6, 1fr);    
+  height: 100vh; 
+  width: 100vw; 
+  gap: 10px; 
   background-color: var(--colors-black);
   position: relative;
   padding-bottom: 5rem;
@@ -147,17 +148,16 @@ main video{
 .gallery-item {
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease-out; /* Smooth transition for transform */
+  transition: transform 0.3s ease-out; 
   border-radius: 8px;
 }
 
 .gallery-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure the images fill their containers */
+  object-fit: cover; 
 }
 
-/* Grid positioning for each image */
 .gallery-item-1 {
   z-index: 10;
   grid-column: 2 / 5; /* Span 3 columns */
@@ -513,16 +513,23 @@ video{
       flex-direction: column;
       gap: 2rem;
   }
+  #services{
+    margin-top: 2rem;
+  }
+  .logos:before, .logos:after{
+    display: none;
+  }
   .contact-aside{
     display: none;
+  }
+  .contact-form span{
+    font-size: 2rem !important;
+    line-height: 3rem !important;
   }
   .contact-form{
     text-align: center;
     padding: 1rem;
-  }
-  .contact-form{
     align-items: center;
-    gap: 1rem;
   }
   input{
     text-align: start;
@@ -534,6 +541,7 @@ video{
     display: block;
     padding: 0 1rem;
     text-align: center;
+    margin-top: 2rem;
   }
   .service-details img{
     object-fit: cover;
@@ -560,79 +568,48 @@ video{
     gap:1.5rem;
   }
 }
-.text-parallax-container {
-  padding-left: 12px;
-  padding-right: 12px;
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
-.sticky-image {
-  position: sticky;
-  z-index: 0;
+.logos {
   overflow: hidden;
-  border-radius: 1rem;
-}
+  padding: 60px 0;
+  white-space: nowrap;
+  position: relative;
 
-.sticky-overlay {
+}
+.logos:before,
+.logos:after{
   position: absolute;
-  inset: 0;
-  background-color: rgba(20, 20, 20, 0.7); /* Neutral overlay */
+  top:0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+.logos::before{
+  left:0;
+  background: linear-gradient(to left, rgba(255,255,255,0),var(--colors-black));
+}
+.logos::after{
+  right:0;
+  background: linear-gradient(to right, rgba(255,255,255,0),var(--colors-black));
 }
 
-.overlay-copy {
-  position: absolute;
-  left: 0;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  height: 100vh;
-  width: 100%;
+.logos-slide {
+  display: inline-block;
+  animation: 35s slide infinite linear;
 }
 
-.overlay-copy .subheading {
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-}
 
-.overlay-copy .heading {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
-.example-content {
-  max-width: 1280px;
-  margin: 3rem auto;
-  padding: 0 1rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-.example-content-title {
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.example-content-text p {
-  font-size: 1.25rem;
-  color: #666;
-  margin-bottom: 1.5rem;
-}
-
-.example-content-button {
-  background-color: #111;
-  color: white;
-  padding: 0.75rem 2rem;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 1.25rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.example-content-button:hover {
-  background-color: #333;
+.logos-slide img {
+  height: 100px;
+  margin: 0 40px;
 }

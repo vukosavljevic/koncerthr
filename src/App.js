@@ -4,10 +4,9 @@ import Hero from './components/Hero';
 import Navigation from './components/Navigation';
 import React, { useEffect } from 'react';
 import Services from './components/Services';
-import Events from './components/Carousel';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import TextParallaxContentExample from './components/Example';
+import ScrollingMenu from './components/InfiniteScroll';
 
 function App() {
   /*useEffect(() => {
@@ -43,10 +42,10 @@ function App() {
       <Navigation />
       <Hero />
       <Gallery />
+      <ScrollingMenu />
       <Services />
-      <Events />
       <Contact />
-      <Footer />
+       <Footer />
     </div>
   );
 }
