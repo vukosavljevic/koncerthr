@@ -32,7 +32,6 @@
 html{
   scroll-behavior: smooth;
   overflow-x: hidden;
-  max-width: 100%;
 }
 body{
   scroll-behavior: smooth;
@@ -54,7 +53,6 @@ p{
   color: var(--colors-text);
 }
 .flex{
-  position: sticky;
   margin:2rem 2rem;
   padding:0.8rem 1.5rem;
   display: flex;
@@ -68,6 +66,7 @@ p{
   width: 80%;
   border-radius: 32px;
 }
+
 video::-webkit-media-controls {
   display:none !important;
 }
@@ -75,7 +74,7 @@ header{
   width: 100%;
   display: flex;
   justify-content: center;
-  position: absolute;
+  position: sticky;
   top: 0;
   z-index: 1000;
 }
