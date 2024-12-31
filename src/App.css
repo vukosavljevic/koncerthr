@@ -143,6 +143,7 @@ main video{
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 100;
 }
 .overlay-title h1{
   font-size: 64px;
@@ -247,14 +248,24 @@ main video{
   align-items: center;
   margin-top: 4rem;
 }
+
 .section-title {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-h2{
+h2, h5{
   color: var(--colors-divider);
-
+}
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), var(--colors-black));
+  z-index: 1;
+  pointer-events: none;
 }
 .section-title  h2{
     color: var(--colors-divider);
@@ -669,4 +680,12 @@ video{
 .logos-slide img {
   height: 100px;
   margin: 0 40px;
+}
+@media (max-width: 1000px) {
+  .contact-aside{
+    display: none ;
+  }
+  .contact{
+    display: flex;
+  }
 }

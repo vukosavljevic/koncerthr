@@ -70,7 +70,7 @@ const Contact = () => {
                             'Trebate pomoć oko produkcije?',
                         ]}
                         speed={50}
-                        style={{ fontSize: '3rem', lineHeight: '4rem' }}
+                        style={{ fontSize: '2.5rem', lineHeight: '3rem' }}
                         repeat={1}
                     />
                 </div>
