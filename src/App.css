@@ -21,17 +21,20 @@
 ::-webkit-scrollbar {
   width: 10px;
 }
-
+.App-logo{
+  height: 24px;
+}
 ::-webkit-scrollbar-track {
   background: transparent; 
 }
  
 ::-webkit-scrollbar-thumb {
-  background: var(--colors-black); 
+  background: var(--colors-white); 
 }
 html{
   scroll-behavior: smooth;
   overflow-x: hidden;
+  scroll-padding-top: 10rem;
 }
 body{
   scroll-behavior: smooth;
@@ -54,7 +57,7 @@ p{
 }
 .flex{
   margin:2rem 2rem;
-  padding:0.8rem 1.5rem;
+  padding:1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,18 +68,26 @@ p{
   z-index: 1000; 
   width: 80%;
   border-radius: 32px;
+  transition: height 0.3s ease-in-out; 
 }
-
+.mt-2{
+  margin-top: 0.55rem;
+}
 video::-webkit-media-controls {
   display:none !important;
 }
 header{
+  position: fixed;
   width: 100%;
   display: flex;
   justify-content: center;
-  position: sticky;
   top: 0;
   z-index: 1000;
+}
+.active{
+  height: 80vh;
+  align-items: start;
+  padding: 0rem;
 }
 nav{
   position: absolute;
@@ -89,6 +100,15 @@ nav ul{
 nav a{
   text-decoration: none;
   color: rgba(212, 212, 212, 1);
+}
+.rotate{
+  transform: rotate(-45deg);
+}
+.activated{
+  height: 2px !important;
+}
+.rotateOther{
+  transform: rotate(45deg);
 }
 .button-primary {
   font-family: "Orbitron";
@@ -183,7 +203,7 @@ main video{
 }
 
 .gallery-item-5 {
-  grid-column: 9 / 13; /* Span 4 columns */
+  grid-column: 8 / 12; /* Span 4 columns */
   grid-row: 5 / 7;     /* Span 2 rows */
 }
 .background {
@@ -395,7 +415,7 @@ input, textarea {
   display: none;
 }
 .line{
-  height: 2px;
+  height: 1px;
   background-color: white;
   width: 20px;
 }
@@ -490,6 +510,38 @@ video{
 .event-title{
   padding-bottom: 2rem;
 }
+.flexColumn{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+}
+.flexLogo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:1rem 2rem 0.5rem 2rem;
+}
+.first-nav-hr{
+  border: none;
+  border-top: 2px dashed var(--colors-divider);
+  height: 1px;
+  width: 100%;
+  margin:0.5rem 0 0.5rem 0;
+}
+.nav-hr{
+  border: none;
+  border-top: 2px dashed var(--colors-divider);
+  height: 1px;
+  width: 100%;
+  margin:1rem 0 0.5rem 0;
+}
+.block ul{
+  display: block;
+}
+.hide{
+  display: none !important;
+}
 @media (max-width: 640px) {
   .hamburger-menu{
     display: flex;
@@ -497,7 +549,7 @@ video{
   .contact-aside-text{
     display: block;
   }
-  nav ul{ 
+  nav .main-nav{ 
     display: none;
   }
   .gallery-item-2 {
@@ -552,7 +604,7 @@ video{
     width: 100%;
   }
   h1{
-    font-size: 32px !important;
+    font-size: 28px !important;
     line-height: 36px !important;
   }
   h2{

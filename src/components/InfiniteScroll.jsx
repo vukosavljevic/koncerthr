@@ -13,7 +13,7 @@ const ScrollingMenu = () => {
     ];
   
     return (
-      <div className="logos">
+      <div className="logos" id="logo">
         <div className="logos-slide">
             <img src={taf} alt={`Logo ${1}`} key={1} />
             <img src={taf} alt={`Logo ${2}`} key={2} />
