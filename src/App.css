@@ -689,3 +689,9 @@ video{
     display: flex;
   }
 }
+@media (max-width: 380px) {
+  .contact-form span{
+    font-size: 1.5rem !important;
+    line-height: 3rem !important;
+  }
+}

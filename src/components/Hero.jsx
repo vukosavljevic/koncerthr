@@ -2,7 +2,13 @@ import video from '../images/Hero.mp4'
 function Hero() {
     return (
         <section id="main">
-            <video src={video} autoplay autoPlay playsinline  oncontextmenu="return false;"  preload="auto" muted defaultMuted loop></video>
+        <video src={video} autoplay 
+        playsInline 
+        muted 
+        defaultMuted 
+        loop 
+        preload="auto" 
+        onContextMenu="return false;"></video>
             <div className="video-overlay"></div>
             <div className='overlay-title'>
                 <h1 className='mb-1'>Sve za vaš <br />nezaboravan <br />event</h1>
