@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import checkIcon from '../images/check.png';
 import { TypeAnimation } from 'react-type-animation';
 
 const Contact = () => {
@@ -71,7 +72,7 @@ const Contact = () => {
                         ]}
                         speed={50}
                         style={{ fontSize: '2.5rem', lineHeight: '3rem' }}
-                        repeat={1}
+                        repeat={Infinity}
                     />
                 </div>
 
@@ -117,8 +118,11 @@ const Contact = () => {
                             onChange={handleChange}
                             autoComplete="off"
                         />
-                        <button type="submit" className="button-primary contact-button" disabled={loading}>
+                        <button type="submit" className={sent ? "button-primary contact-button button-enabled" : "button-primary contact-button"} disabled={loading}>
                             {loading ? 'PRIČEKAJTE...' : sent ? 'POSLANO' : 'POŠALJI'}
+                            {
+                            sent ? <img src={checkIcon} alt="Check icon" /> : <div></div>
+                        }
                         </button>
                     </form>
                 </div>

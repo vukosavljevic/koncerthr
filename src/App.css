@@ -8,6 +8,7 @@
   --colors-black:#080808;
   --colors-divider:#404040;
   --colors-text:#D4D4D4;
+  --color-success: #5ce65c;
 }
 *,*::before,*::after{
   margin: 0;
@@ -213,7 +214,6 @@ main video{
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('./images/elipse.png'); 
   background-size: cover;
   transition: filter 0.3s;
 }
@@ -651,7 +651,8 @@ video{
   padding: 60px 0;
   white-space: nowrap;
   position: relative;
-
+  display: flex;
+  margin-top: 2rem;
 }
 .logos:before,
 .logos:after{
@@ -672,7 +673,6 @@ video{
 }
 
 .logos-slide {
-  display: inline-block;
   animation: 35s slide infinite linear;
 }
 
@@ -694,4 +694,27 @@ video{
     font-size: 1.5rem !important;
     line-height: 3rem !important;
   }
+}
+.logos-slide img{
+  width: 124px;
+  object-fit: contain;
+}
+.button-enabled{
+  font-family: "Orbitron";
+  border: 2px solid var(--color-success);
+  padding: 0.7rem 0.8rem;
+  border-radius: 1.5rem;
+  color: var(--color-success);
+  font-weight: 600;
+  text-decoration: none;
+  transition: border 0.3s, box-shadow 0.3s, color 0.3s;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-enabled img{
+  margin-left: 0.5rem;
+  height: 18px;
 }

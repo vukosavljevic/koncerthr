@@ -82,12 +82,12 @@ useEffect(() => {
               <hr className='nav-hr'/>
               <div className='flexLogo'>
                 <h5>0/1</h5>
-                <li><a href="#services" onClick={switchNavigation}>Usluge</a></li>
+                <li><a href="#logo" onClick={switchNavigation}>Oprema</a></li>
               </div>
               <hr className='nav-hr'/>
               <div className='flexLogo'>
                 <h5>0/2</h5>
-                <li><a href="#logo" onClick={switchNavigation}>Oprema</a></li>
+                <li><a href="#services" onClick={switchNavigation}>Usluge</a></li>
               </div>
               <hr className='nav-hr'/>
               <div className='flexLogo'>
