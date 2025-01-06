@@ -17,7 +17,7 @@ function App() {
       <ScrollingMenu />
       <Services />
       <Contact />
-       <Footer />
+      <Footer />
     </div>
   );
 }
