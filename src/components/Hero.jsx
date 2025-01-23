@@ -3,7 +3,7 @@ import video from '../images/Hero.mp4'
 function Hero() {
     return (
         <section id="main">
-        <video autoPlay muted loop playsinline width="250">
+        <video autoPlay muted loop webkit-playsinline="true" playsinline="true" autoplay="true" width="250">
   <source src={video} type="video/mp4" />
 </video>
          <div className="video-overlay"></div>
