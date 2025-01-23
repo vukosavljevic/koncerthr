@@ -3,14 +3,11 @@ import video from '../images/Hero.mp4'
 function Hero() {
     return (
         <section id="main">
-        <video
+        <video  
   src={video}
   autoPlay
-  muted
-  loop
-  playsInline
-  preload="auto"
->
+      playsInline
+    >
   <source src={video} type="video/mp4" />
   Your browser does not support the video tag.
 </video>
