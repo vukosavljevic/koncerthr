@@ -1,10 +1,10 @@
 import video from '../images/Hero.mp4'
+
 function Hero() {
     return (
         <section id="main">
             <video src={video}     
-            autoPlay 
-            preload="auto" 
+            autoplay
             muted 
             loop 
             playsinline></video>
