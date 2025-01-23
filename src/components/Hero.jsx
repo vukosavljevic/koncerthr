@@ -4,7 +4,7 @@ function Hero() {
     return (
         <section id="main">
             <video src={video}     
-            autoplay
+            autoPlay
             muted 
             loop 
             playsinline></video>
