@@ -12,14 +12,12 @@ function Hero() {
         }
         console.log(isIOS);
       }, []);
-    return (
-        isIOS ? <section id="main">
-            <img src={image} alt="People jumping hero image"/>
-        </section> : 
+    return ( 
         <section id="main">
-        <video autoPlay muted loop playsInline>
+        isIOS ?             <img src={image} alt="People jumping hero image"/>
+ : <video autoPlay muted loop playsInline  >
   <source src={video} type="video/mp4" />
-</video>
+</video> 
 
          <div className="video-overlay"></div>
             <div className='overlay-title'>
