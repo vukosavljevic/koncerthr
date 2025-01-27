@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import image2 from '../images/image2.png';
-import image3 from '../images/image3.png';
+import image2 from '../images/glazbeni.jpeg';
+import image3 from '../images/oprema.jpeg';
 import image4 from '../images/image4.png';
 
 const Services = () => {
@@ -29,7 +29,7 @@ const Services = () => {
             <ServiceDetail
                 number="1/1"
                 title="Komercijalni eventi"
-                description="Planiranje, produkciju i tehničku podršku za koncerte, festivale i evente. S nama je svaki detalj pod kontrolom, a vaš događaj nezaboravan! Od ideje do realizacije, brinemo o svemu!"
+                description="Organiziramo i realiziramo nezaboravne komercijalne evente! Od inovativnog planiranja do tehničke produkcije, svaki detalj je u sigurnim rukama našeg stručnog tima. Vaša vizija, naša izvedba!"
                 imgSrc={image4}
                 animation={fadeInUp}
             />
@@ -38,8 +38,8 @@ const Services = () => {
             <ServiceDetail
                 number="1/2"
                 title="Glazbeni događaji"
-                description="Planiranje, produkciju i tehničku podršku za koncerte, festivale i evente. S nama je svaki detalj pod kontrolom, a vaš događaj nezaboravan! Od ideje do realizacije, brinemo o svemu!"
-                imgSrc={image4}
+                description="Stvaramo nezaboravne glazbene doživljaje! Bilo da se radi o koncertima, festivalima ili posebnim glazbenim večerima, pružamo kompletnu produkciju i tehničku podršku kako bismo ostvarili sve vaše ideje."
+                imgSrc={image2}
                 animation={fadeInUp}
             />
                         <hr />
@@ -47,8 +47,8 @@ const Services = () => {
             <ServiceDetail
                 number="1/3"
                 title="Iznajmljivanje opreme"
-                description="Planiranje, produkciju i tehničku podršku za koncerte, festivale i evente. S nama je svaki detalj pod kontrolom, a vaš događaj nezaboravan! Od ideje do realizacije, brinemo o svemu!"
-                imgSrc={image4}
+                description="Nudimo profesionalnu opremu za svaki tip događaja! Naša vrhunska tehnologija i stručna podrška osiguravaju da vaš event bude tehnički savršen i besprijekorno izveden."
+                imgSrc={image3}
                 animation={fadeInUp}
             />
             <hr />
