@@ -1,5 +1,6 @@
 import video from '../images/Hero.mp4'
 import { useState, useEffect } from 'react';
+import image from '../images/Hero.jpg';
 function Hero() {
     const [isIOS, setIsIOS] = useState(false);
 
@@ -12,9 +13,11 @@ function Hero() {
         console.log(isIOS);
       }, []);
     return (
-        isIOS ? <h1>It's ios </h1> : 
+        isIOS ? <section id="main">
+            <img src={image} alt="People jumping hero image"/>
+        </section> : 
         <section id="main">
-        <video autoPlay muted loop playsInline width="250">
+        <video autoPlay muted loop playsInline>
   <source src={video} type="video/mp4" />
 </video>
 

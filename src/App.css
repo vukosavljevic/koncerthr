@@ -139,7 +139,9 @@ main{
 main video{
   width: 100%;
   pointer-events: none;
-
+}
+#main image{
+  width: 100%;
 }
 .overlay-title{
   position: absolute;
