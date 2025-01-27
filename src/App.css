@@ -140,7 +140,7 @@ main video{
   width: 100%;
   pointer-events: none;
 }
-#main image{
+#main img{
   width: 100vw;
 }
 .overlay-title{
