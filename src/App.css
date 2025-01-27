@@ -581,6 +581,9 @@ video {
     grid-column: 3 / 11;
     grid-row: 1/6;
 }
+input{
+  padding: 10px 0px !important;
+}
   .section-title{
     text-align: center;
   }
