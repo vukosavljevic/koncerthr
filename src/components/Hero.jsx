@@ -14,10 +14,10 @@ function Hero() {
       }, []);
     return ( 
         <section id="main">
-        isIOS ?             <img src={image} alt="People jumping hero image"/>
+        {isIOS ? <img src={image} alt="People jumping hero image"/>
  : <video autoPlay muted loop playsInline  >
   <source src={video} type="video/mp4" />
-</video> 
+</video> }
 
          <div className="video-overlay"></div>
             <div className='overlay-title'>
